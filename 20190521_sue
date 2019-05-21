@@ -1,0 +1,75 @@
+#include <stdio.h>
+
+struct s_tmp {
+	int a;
+	double b;
+	int c[10];
+};
+
+struct s_tmp2 {
+	int a;
+	double b;
+	int c[10];
+}abc;
+
+struct {
+	int a;
+	double b;
+	int c[10];
+}unname;
+
+typedef struct vector2
+{
+	int x;
+	int y;
+}Vector2;
+
+typedef struct
+{
+	int x;
+	int y;
+	int z;
+}Vector3;
+
+union u_tmp
+{
+	char c;
+	int i;
+};
+
+typedef enum test {
+	t = 1 << 0,
+	t2 = 1 << 1,
+
+}e;
+
+enum week {
+	sun,
+	mon,
+};
+
+void main()
+{
+	struct s_tmp tmp;
+
+	tmp.a = 7;
+
+	abc.b = 5.6;
+
+	unname.c[0] = 10;
+
+	Vector2 vector;
+	vector.x = 10;
+	vector.y = 25;
+
+	Vector3 _v3;
+	_v3.x = _v3.y = _v3.z = 10;
+
+	union u_tmp u;
+	u.c = 'a';
+	u.i = 97;
+	printf("%c\n", u.c);
+	printf("%d\n", u.i);
+
+	enum week we;
+}
